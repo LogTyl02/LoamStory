@@ -7,7 +7,7 @@ public class SlickGame extends StateBasedGame {
     public static final int     WIDTH           = 1440;
     public static final int     HEIGHT          = 900;
     public static final boolean FULLSCREEN      = false;
-    public static final String  gameName        = "Loam Story";
+    public static final String  gameName        = "Loam Story - Pre-Alpha";
     public static final int     menu            = 0;
     public static final int     play            = 1;
     

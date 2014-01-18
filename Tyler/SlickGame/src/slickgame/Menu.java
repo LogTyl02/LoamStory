@@ -3,19 +3,24 @@ package slickgame;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 import java.awt.Font;
-import static org.lwjgl.opengl.GL11.*;
+import org.lwjgl.input.Mouse;
+import org.lwjgl.input.Keyboard;
 import org.newdawn.slick.font.effects.ColorEffect;
-import org.newdawn.slick.opengl.*;
 
-import static org.newdawn.slick.opengl.renderer.SGL.GL_BLEND;
 public class Menu extends BasicGameState {
     
     private static final String TITLE = "'Loam Story', or: 'Hunting for Mushrooms in All the Wrong Places'";
-    private static final String START = "Traverse the darkness...";
+    private static final String START = "Traverse the darkness";
+    private static final String QUIT  = "Escape to the light";
+    private static String       MOUSE = "No mouse input detected.";
     Font awtFont;
     UnicodeFont unicodeFont;
     
+    Image dragon;
     
+    Image shroom;
+    int shroomX = 55;
+    int shroomY = 130;
     
     public Menu(int state) {
         
@@ -23,6 +28,8 @@ public class Menu extends BasicGameState {
     
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         setUpFonts();
+        shroom = new Image("res/art/sprite/greenmushroom.png");
+        dragon = new Image("res/art/sprite/reddragon.png");
     }
     
     /*
@@ -32,15 +39,33 @@ public class Menu extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException { 
         g.setFont(unicodeFont);
         g.drawString(TITLE, 30, 100);
+        g.drawString(MOUSE, 30, 600);
+        g.drawString(START, 30, 800);
+        g.drawString(QUIT, 300, 800);
         g.drawRect(30, 150, unicodeFont.getWidth(TITLE), 300);
         
-        Image dragon = new Image("res/art/sprite/reddragon.png");
+        
         g.drawImage(dragon, 300, 0);
+        shroom.draw(shroomX, shroomY, 0.5f);
         
     }
     
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
+        Input input = gc.getInput();
         
+        if (input.isKeyDown(Input.KEY_A)) {
+            shroomX -= 1;
+        } else if (input.isKeyDown(Input.KEY_D)) {
+            shroomX += 1;
+        } else if (input.isKeyDown(Input.KEY_W)) {
+            shroomY -= 1;
+        } else if (input.isKeyDown(Input.KEY_S)) {
+            shroomY += 1;
+        }
+        
+        int xPos = Mouse.getX();
+        int yPos = Mouse.getY();
+        MOUSE = "Mouse Position x: " + xPos + " y: " + yPos;
     }
     
     public int getID() {
