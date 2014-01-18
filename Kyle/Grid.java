@@ -2,7 +2,7 @@ class Grid
 {
 	private final int width, height;
 	private String[][] grid;
-	String markWith = "O";
+	String markWith = "\u2620";
 	String coverUp = ".";
 
 	public Grid(int width_, int height_)
@@ -73,6 +73,6 @@ class Grid
 			}
 			System.out.println();
 		}
-	System.out.println();
+		System.out.println();
 	}
 }
