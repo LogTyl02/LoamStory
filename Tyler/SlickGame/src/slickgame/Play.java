@@ -21,7 +21,7 @@ public class Play extends BasicGameState {
     }
     
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-        
+        g.drawString("This is the darkness.", 50, 50);
     }
     
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
