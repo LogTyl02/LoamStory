@@ -72,6 +72,10 @@ public class Menu extends BasicGameState {
         if ((xPos > 30 && xPos < 250) && (yPos > 80 && yPos < 95)) {
             if (input.isMouseButtonDown(0)) {
                sbg.enterState(1);
+            } else if ((xPos > 300 && xPos < 485) && (yPos > 80 && yPos < 95)) {
+                if (input.isMouseButtonDown(0)) {
+                    //sbg.closeRequested();
+                }
             }
         }
         
