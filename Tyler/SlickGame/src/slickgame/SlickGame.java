@@ -30,6 +30,7 @@ public class SlickGame extends StateBasedGame {
             appgc = new AppGameContainer(new SlickGame(gameName));
             appgc.setDisplayMode(WIDTH, HEIGHT, FULLSCREEN);
             appgc.start();
+            
         } catch (SlickException e) {
             e.printStackTrace();
         } 
