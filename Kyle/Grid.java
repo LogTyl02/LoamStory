@@ -3,7 +3,8 @@ class Grid
 	private final int width, height;
 	private String[][] grid;
 	String markWith = "\u2620";
-	String coverUp = "\u2E2D";
+	//String coverUp = "\u2E2D";
+	String coverUp = ".";
 	String staticObject = "\u25A0";
 
 	public Grid(int width_, int height_)

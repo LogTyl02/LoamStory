@@ -1,9 +1,12 @@
+import java.util.Random;
 class Maps
 {
 	Grid grid;
-	Maps(Grid grid)
+	int gridSize;
+	Maps(Grid grid, int gridSize)
 	{
 		this.grid = grid;
+		this.gridSize = gridSize;
 	}
 	public void firstMapEver()
 	{
@@ -68,4 +71,68 @@ class Maps
 		grid.markObject(13,12);
 
 	}
+	public void boxLevel()
+	{
+		//Makes left wall
+		for (int x=0; x<gridSize; x++)
+		{
+			grid.markObject(x, 0);
+		}
+		//Makes top wall
+		for (int x=0; x<gridSize; x++)
+		{
+			grid.markObject(0,x);
+		}
+		//makes right wall
+		for (int x=0; x<gridSize; x++)
+		{
+			grid.markObject(x, gridSize-1);
+		}
+		//makes bottom wall
+		for (int x=0; x<gridSize; x++)
+		{
+			grid.markObject(gridSize-1, x);
+		}
+
+
+	}
+	public void randomSpots()
+	{
+		Random rand = new Random();
+
+
+		for (int x=0; x<gridSize*2; x++)
+		{
+			int numbY = rand.nextInt(gridSize-1);
+			int numbX = rand.nextInt(gridSize-1);
+			grid.markObject(numbX, numbY);
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
