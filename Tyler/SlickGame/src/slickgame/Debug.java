@@ -4,18 +4,25 @@ import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
 public class Debug extends BasicGameState {
-    
+    Image tile;
     public Debug(int state) {
         
     }
     
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         
+        tile = new Image("res/art/tile/test.png");
     }
     
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         g.drawString("Razzle Dazzle Root Beer!", 50, 50);
         
+        // Draw some tiles
+        for (int i = 100; i <= 500; i += 30) {
+            for (int j = 500; j >= 100; j -= 30) {
+                tile.draw(i, j);
+            }
+        }
     }
     
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {

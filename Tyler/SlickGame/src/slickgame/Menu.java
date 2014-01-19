@@ -11,8 +11,9 @@ public class Menu extends BasicGameState {
     
     private static final String TITLE = "'Loam Story', or: 'Hunting for Mushrooms in All the Wrong Places'";
     private static final String START = "Traverse the darkness";
-    private static final String QUIT  = "Escape to the light";
+    private static final String QUIT  = "Escape to the light"; // Non functional atm
     private static String       MOUSE = "No mouse input detected.";
+    private static String       STATES = "Press: 0. For Menu 1. For Play 2. For Win 3. For Death 9. For Debug"
     Font awtFont;
     UnicodeFont unicodeFont;
     
@@ -41,7 +42,7 @@ public class Menu extends BasicGameState {
         g.drawString(TITLE, 30, 100);
         g.drawString(MOUSE, 30, 600);
         g.drawString(START, 30, 800);
-        g.drawString(QUIT, 300, 800);
+        g.drawString(STATES, 30, 500);
         g.drawRect(30, 150, unicodeFont.getWidth(TITLE), 300);
         
         
