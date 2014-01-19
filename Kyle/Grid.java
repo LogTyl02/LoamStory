@@ -3,7 +3,8 @@ class Grid
 	private final int width, height;
 	private String[][] grid;
 	String markWith = "\u2620";
-	String coverUp = ".";
+	String coverUp = "\u2E2D";
+	String staticObject = "\u25A0";
 
 	public Grid(int width_, int height_)
 	{
@@ -30,6 +31,17 @@ class Grid
 			System.out.println("OUT OF BOUNDS" + " " +"(" + x + ","+ y + ")");
 		}
 	}
+	public void markObject(int x, int y)
+	{
+		if (inBounds(x,y))
+		{
+			grid[x][y] = staticObject;
+		}
+		else
+		{
+			System.out.println("OUT OF BOUNDS" + " " +"(" + x + ","+ y + ")");
+		}
+	}
 	public void unmarkCell(int x, int y)
 	{
 		if (inBounds(x,y))
@@ -46,6 +58,17 @@ class Grid
 		if (inBounds(x,y))
 		{
 			return grid[x][y].equals(markWith);
+		}
+		else
+		{
+			return true;
+		}
+	}
+	public Boolean isObject(int x, int y)
+	{
+		if (inBounds(x,y))
+		{
+			return grid[x][y].equals(staticObject);
 		}
 		else
 		{
