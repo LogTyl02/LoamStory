@@ -6,7 +6,8 @@ import org.newdawn.slick.state.*;
 public class Play extends BasicGameState {
     boolean quit = false;
     Image forest;
-    Image koro;
+    SpriteSheet koro;
+    Image k;
     Animation koroAnim, movingUp, movingDown, movingLeft, movingRight;
     int[] duration = {200, 200}; // Duration of each frame in the animation
     float koroPosX = 0;
@@ -21,11 +22,11 @@ public class Play extends BasicGameState {
     }
     
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        
-        
         forest = new Image("res/art/background/darkforest.jpg");
         
-        // Make some spots for animations
+        koro = new SpriteSheet("res/art/sprite/korosprite.png", 30, 28);
+        koroAnim = new Animation(koro, 100);
+        koroAnim.setAutoUpdate(true);
         
         
     }
@@ -33,6 +34,7 @@ public class Play extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         g.drawImage(forest, 0, 0);
         g.drawString("This is the darkness.", 50, 50);
+        koroAnim.draw(600, 600);
         
     }
     
