@@ -1,0 +1,71 @@
+class Maps
+{
+	Grid grid;
+	Maps(Grid grid)
+	{
+		this.grid = grid;
+	}
+	public void firstMapEver()
+	{
+		grid.markObject(5,3);
+		grid.markObject(5,4);
+		grid.markObject(5,5);
+		grid.markObject(5,6);
+		grid.markObject(5,7);
+		grid.markObject(5,2);
+		grid.markObject(5,1);
+		grid.markObject(5,8);
+		grid.markObject(9,1);
+		grid.markObject(9,2);
+		grid.markObject(9,3);
+		grid.markObject(9,4);
+		grid.markObject(9,5);
+		grid.markObject(9,6);
+		grid.markObject(9,7);
+		grid.markObject(9,8);
+		grid.markObject(10,8);
+		grid.markObject(11,8);
+		grid.markObject(12,8);
+		grid.markObject(13,8);
+		grid.markObject(14,8);
+		grid.markObject(14,9);
+		grid.markObject(14,10);
+		grid.markObject(14,11);
+		grid.markObject(14,12);
+		grid.markObject(4,8);
+		grid.markObject(3,8);
+		grid.markObject(2,8);
+		grid.markObject(1,8);
+		grid.markObject(0,8);
+		grid.markObject(0,12);
+		grid.markObject(1,12);
+		grid.markObject(2,12);
+		grid.markObject(3,12);
+		grid.markObject(4,12);
+		grid.markObject(5,12);
+		grid.markObject(5,13);
+		grid.markObject(5,14);
+		grid.markObject(5,15);
+		grid.markObject(5,16);
+		grid.markObject(5,17);
+		grid.markObject(5,18);
+		grid.markObject(5,19);
+		grid.markObject(5,20);
+		grid.markObject(5,0);
+		grid.markObject(9,0);
+		grid.markObject(9,12);
+		grid.markObject(9,13);
+		grid.markObject(9,14);
+		grid.markObject(9,15);
+		grid.markObject(9,16);
+		grid.markObject(9,17);
+		grid.markObject(9,18);
+		grid.markObject(9,19);
+		grid.markObject(9,20);
+		grid.markObject(10,12);
+		grid.markObject(11,12);
+		grid.markObject(12,12);
+		grid.markObject(13,12);
+
+	}
+}
