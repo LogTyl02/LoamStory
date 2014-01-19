@@ -3,21 +3,18 @@ package slickgame;
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
-public class Play extends BasicGameState {
-    Image forest;
+public class Win extends BasicGameState {
     
-    public Play(int state) {
+    public Win(int state) {
         
     }
     
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        forest = new Image("res/art/background/darkforest.jpg");
         
     }
     
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-        g.drawImage(forest, 0, 0);
-        g.drawString("This is the darkness.", 50, 50);
+        g.drawString("Congrats, Dr. Balthazar White! A winrar is you!.", 50, 50);
         
     }
     
@@ -26,7 +23,7 @@ public class Play extends BasicGameState {
     }
     
     public int getID() {
-        return 1;
+        return 2;
     }
     
 }

@@ -53,7 +53,7 @@ public class Menu extends BasicGameState {
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
         Input input = gc.getInput();
         
-        /*
+        
         if (input.isKeyDown(Input.KEY_A)) {
             shroomX -= 1;
         } else if (input.isKeyDown(Input.KEY_D)) {
@@ -63,7 +63,7 @@ public class Menu extends BasicGameState {
         } else if (input.isKeyDown(Input.KEY_S)) {
             shroomY += 1;
         }
-        */
+        
         
         int xPos = Mouse.getX();
         int yPos = Mouse.getY();
