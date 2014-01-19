@@ -96,6 +96,34 @@ class Maps
 
 
 	}
+	public void leftborder()
+	{
+		for (int x=0; x<gridSize; x++)
+		{
+			grid.markObject(x, 0);
+		}
+	}
+	public void topBorder()
+	{
+		for (int x=0; x<gridSize; x++)
+		{
+			grid.markObject(0,x);
+		}
+	}
+	public void rightBorder()
+	{
+		for (int x=0; x<gridSize; x++)
+		{
+			grid.markObject(x, gridSize-1);
+		}
+	}
+	public void bottomBorder()
+	{
+		for (int x=0; x<gridSize; x++)
+		{
+			grid.markObject(gridSize-1, x);
+		}
+	}
 	public void randomSpots()
 	{
 		Random rand = new Random();
@@ -108,6 +136,7 @@ class Maps
 			grid.markObject(numbX, numbY);
 		}
 	}
+
 }
 
 

@@ -15,7 +15,11 @@ class Main
 		Maps pickMap = new Maps(grid, size);
 		Monst myMonster = new Monst(monstX, monstY, height,width, grid);
 		//pickMap.firstMapEver();
-		pickMap.boxLevel();
+		//pickMap.boxLevel();
+		//pickMap.rightBorder();
+		pickMap.topBorder();
+		//pickMap.leftBorder();
+		pickMap.bottomBorder();
 		pickMap.randomSpots();
 
 		while (true)
