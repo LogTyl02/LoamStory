@@ -13,7 +13,7 @@ public class Menu extends BasicGameState {
     private static final String START = "Traverse the darkness";
     private static final String QUIT  = "Escape to the light"; // Non functional atm
     private static String       MOUSE = "No mouse input detected.";
-    private static String       STATES = "Press: 0. For Menu 1. For Play 2. For Win 3. For Death 9. For Debug"
+    private static String       STATES = "Press: 0. For Menu 1. For Play 2. For Win 3. For Death 9. For Debug";
     Font awtFont;
     UnicodeFont unicodeFont;
     

@@ -4,14 +4,29 @@ import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
 public class Play extends BasicGameState {
+    boolean quit = false;
     Image forest;
+    Image koro;
+    Animation koroAnim, movingUp, movingDown, movingLeft, movingRight;
+    int[] duration = {200, 200}; // Duration of each frame in the animation
+    float koroPosX = 0;
+    float koroPosY = 0;
+    float shiftX   = koroPosX + SlickGame.WIDTH / 2;  // Attempting to keep the sprite in the middle, and move the map underneath
+    float shiftY   = koroPosY + SlickGame.HEIGHT / 2;
+    
+    
     
     public Play(int state) {
         
     }
     
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+        
+        
         forest = new Image("res/art/background/darkforest.jpg");
+        
+        // Make some spots for animations
+        
         
     }
     
@@ -36,6 +51,8 @@ public class Play extends BasicGameState {
         } else if (input.isKeyDown(Input.KEY_9)) {
             // Debug
             sbg.enterState(9);
+        } else if (input.isKeyDown(Input.KEY_ESCAPE)) {
+            quit = true;
         }
     }
     

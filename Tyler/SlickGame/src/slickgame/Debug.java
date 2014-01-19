@@ -15,10 +15,16 @@ public class Debug extends BasicGameState {
     }
     
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
+        
         g.drawString("Razzle Dazzle Root Beer!", 50, 50);
         
         // Draw some tiles
-        for (int i = 100; i <= 500; i += 30) {
+        /*
+            Doing it this way comes with a huge FPS hit. It's running the loop every
+            frame. Should use a loop to build a single image from the tiles and then lay
+            that one image down.
+        */
+        for (int i = 0; i <= SlickGame.WIDTH; i += 30) {
             for (int j = 500; j >= 100; j -= 30) {
                 tile.draw(i, j);
             }
