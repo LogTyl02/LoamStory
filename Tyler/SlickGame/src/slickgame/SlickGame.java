@@ -13,6 +13,7 @@ public class SlickGame extends StateBasedGame {
     public static final int     FPS             = 59; // -1 cuz it starts at 0
     public static final String  gameName        = "Loam - Pre-Alpha";
     
+    
     /*
         List of Game States
     */
@@ -37,13 +38,13 @@ public class SlickGame extends StateBasedGame {
     
     public void initStatesList(GameContainer gc) throws SlickException {
         this.getState(intro).init(gc, this);
-        this.getState(menu).init(gc, this); // Add menu to the list of states
-        this.getState(play).init(gc, this); // Add play to the list of states
-        this.getState(win).init(gc, this);  // Win!
-        this.getState(death).init(gc, this); // Lose!
+        this.getState(menu).init(gc, this);        // Add menu to the list of states
+        this.getState(play).init(gc, this);        // Add play to the list of states
+        this.getState(win).init(gc, this);         // Win!
+        this.getState(death).init(gc, this);       // Lose!
         this.getState(sound_debug).init(gc, this); // Sound debug
-        this.getState(debug).init(gc, this); // Razzle Dazzle Root Beer
-        this.enterState(intro);              // The first screen is the intro
+        this.getState(debug).init(gc, this);       // Razzle Dazzle Root Beer
+        this.enterState(intro);                    // The first screen is the intro
     }
     
     public static void main(String[] args) {

@@ -65,6 +65,7 @@ public class Intro extends BasicGameState {
             
             if (input.isKeyDown(Input.KEY_ENTER)) {
                 sbg.enterState(1);
+                
             }
     }
     
