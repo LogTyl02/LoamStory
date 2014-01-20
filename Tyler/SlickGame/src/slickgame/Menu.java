@@ -63,6 +63,8 @@ public class Menu extends BasicGameState {
             sbg.enterState(2);
         } else if (input.isKeyDown(Input.KEY_3)) {
             sbg.enterState(3);
+        } else if (input.isKeyDown(Input.KEY_8)) {
+            sbg.enterState(8);
         } else if (input.isKeyDown(Input.KEY_9)) {
             // Debug
             sbg.enterState(9);
@@ -86,7 +88,7 @@ public class Menu extends BasicGameState {
     }
     
     public int getID() {
-        return 0;
+        return 1;
     }
     
     public void setUpFonts() throws SlickException {
