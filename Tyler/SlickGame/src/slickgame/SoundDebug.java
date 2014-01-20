@@ -6,6 +6,7 @@ import org.newdawn.slick.state.*;
 public class SoundDebug extends BasicGameState {
     private Music music;    // Constant, like background music
     private Sound sound;    // For sound effects
+    private Sound growl;
     
     public SoundDebug(int state) {
         
@@ -14,8 +15,10 @@ public class SoundDebug extends BasicGameState {
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         music = new Music("res/audio/music/spook.wav");
         sound = new Sound("res/audio/fx/thump.wav");
+        growl = new Sound("res/audio/fx/monster.wav");
         music.loop();
         sound.play();
+        
      
     }
     
@@ -46,7 +49,7 @@ public class SoundDebug extends BasicGameState {
             sbg.enterState(9);
         }
         
-        if (input.isKeyDown(Input.KEY_SPACE)) {
+        if (input.isKeyPressed(Input.KEY_N) || input.isKeyPressed(Input.KEY_M)) { // Make sure to use isKeyPressed to test sounds!
             sound.play();
         }
     }
