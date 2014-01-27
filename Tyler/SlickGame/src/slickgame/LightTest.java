@@ -17,6 +17,8 @@ public class LightTest extends BasicGameState {
     Color tileColor = Color.darkGray;
     private ParticleSystem system;
     private ConfigurableEmitter emitter;
+    float mx;
+    float my;
     
     public LightTest(int state) {
         
@@ -32,6 +34,8 @@ public class LightTest extends BasicGameState {
         glLight(GL_LIGHT0, GL_DIFFUSE, asFloatBuffer(new float[]{1.5f, 1.5f, 1.5f, 1}));
         glEnable(GL_COLOR_MATERIAL);
         glColorMaterial(GL_FRONT, GL_DIFFUSE);
+        glLight(GL_LIGHT0, GL_POSITION, asFloatBuffer(new float[]{ 300.0f, 300.0f, 1.0f, 1.0f}));
+        
         
         tile = new Image("res/art/tile/test.png");
         
@@ -56,12 +60,17 @@ public class LightTest extends BasicGameState {
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
         tile.draw(50, 50, tileColor);
         system.render();
+        g.drawString(mx + " " + my, 150, 150);
+        
     }
     
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
         Input input = gc.getInput();
         tileColor = Color.darkGray;
         system.update(delta);
+        mx = input.getMouseX();
+        my = input.getMouseY();
+        glLight(GL_LIGHT0, GL_POSITION, asFloatBuffer(new float[]{ mx, my, 1.0f, 0.0f}));
         
         
         if (input.isKeyDown(Input.KEY_0)) {
