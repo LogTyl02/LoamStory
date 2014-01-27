@@ -96,7 +96,7 @@ class Maps
 
 
 	}
-	public void leftborder()
+	public void leftBorder()
 	{
 		for (int x=0; x<gridSize; x++)
 		{
@@ -129,7 +129,7 @@ class Maps
 		Random rand = new Random();
 
 
-		for (int x=0; x<gridSize*2; x++)
+		for (int x=0; x<gridSize*19; x++)
 		{
 			int numbY = rand.nextInt(gridSize-1);
 			int numbX = rand.nextInt(gridSize-1);
