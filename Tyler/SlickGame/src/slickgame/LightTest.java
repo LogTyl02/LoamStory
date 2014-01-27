@@ -12,8 +12,12 @@ import org.newdawn.slick.particles.ParticleSystem;
 import org.newdawn.slick.state.*;
 
 public class LightTest extends BasicGameState {
-   
+   public static final String VERTEX_SHADER_LOCATION = "res/shader/pixel_phong_lighting.vs";
+   public static final String FRAGMENT_SHADER_LOACTION = "res/shader/pixel_phong_lighting.fs";
+    
+    
     Image tile;
+    Image s;
     Color tileColor = Color.darkGray;
     private ParticleSystem system;
     private ConfigurableEmitter emitter;
@@ -30,14 +34,15 @@ public class LightTest extends BasicGameState {
         //glEnable(GL_DEPTH_TEST);
         glEnable(GL_LIGHTING);
         glEnable(GL_LIGHT0);
-        glLightModel(GL_LIGHT_MODEL_AMBIENT, asFloatBuffer(new float[]{0.05f, 0.05f, 0.05f, 1f}));
-        glLight(GL_LIGHT0, GL_DIFFUSE, asFloatBuffer(new float[]{1.5f, 1.5f, 1.5f, 1}));
+        glLightModel(GL_LIGHT_MODEL_AMBIENT, asFloatBuffer(new float[]{0.09f, 0.09f, 0.09f, 1f}));
+        glLight(GL_LIGHT0, GL_DIFFUSE, asFloatBuffer(new float[]{7.5f, 7.5f, 7.5f, 1}));
         glEnable(GL_COLOR_MATERIAL);
         glColorMaterial(GL_FRONT, GL_DIFFUSE);
         glLight(GL_LIGHT0, GL_POSITION, asFloatBuffer(new float[]{ 300.0f, 300.0f, 1.0f, 1.0f}));
         
         
         tile = new Image("res/art/tile/test.png");
+        s = new Image("res/art/sprite/tree.png");
         
         
         
@@ -61,6 +66,7 @@ public class LightTest extends BasicGameState {
         tile.draw(50, 50, tileColor);
         system.render();
         g.drawString(mx + " " + my, 150, 150);
+        g.drawImage(s, 400, 400);
         
     }
     
@@ -70,7 +76,7 @@ public class LightTest extends BasicGameState {
         system.update(delta);
         mx = input.getMouseX();
         my = input.getMouseY();
-        glLight(GL_LIGHT0, GL_POSITION, asFloatBuffer(new float[]{ mx, my, 1.0f, 0.0f}));
+        glLight(GL_LIGHT0, GL_POSITION, asFloatBuffer(new float[]{ mx, my, 1.0f, 1.0f}));
         
         
         if (input.isKeyDown(Input.KEY_0)) {
