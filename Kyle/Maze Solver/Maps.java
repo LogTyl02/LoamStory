@@ -139,8 +139,8 @@ class Maps
 
 		for (int x=0; x<gridSize*9; x++)
 		{
-			int numbY = rand.nextInt(gridSize-1);
-			int numbX = rand.nextInt(gridSize-1);
+			int numbY = rand.nextInt(gridSize);
+			int numbX = rand.nextInt(gridSize);
 			grid.markCell(numbX, numbY, markMaps);
 		}
 	}

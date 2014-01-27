@@ -10,7 +10,7 @@ class Main
 
 		int size, x ,y, startingX, startingY, width,height;
 		int[] test, positions, newPos;
-		size = 50;
+		size = 40;
 		height = size;
 		width = size;
 		String markGrid, markBot, markWall, visitedSpot;
@@ -47,14 +47,19 @@ class Main
 		*/
 
 		//int[] win = {size-2, size-2};
-		x = 1;
-		y = 1;
+		x = 0;
+		y = 0;
+		st.push(x,y);
 		boolean running = true;
 		while (true)
 		{
 			Thread.sleep(100);
 			System.out.println("\033[2J");
 			positions = search.checkDepth(x,y);
+			if (st.pointer() < 1)
+			{
+				break;
+			}
 			if (positions[0] == -10)
 			{
 				System.out.println("NO MOVES");

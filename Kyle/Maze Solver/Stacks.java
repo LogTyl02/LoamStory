@@ -38,8 +38,9 @@ public class Stacks
 	{
 		return stack[pointsAdded-1][1];
 	}
-	void pointer()
+	int pointer()
 	{
 		System.out.println("Current stack size " + pointsAdded);
+		return pointsAdded;
 	}
 }
