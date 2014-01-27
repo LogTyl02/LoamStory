@@ -9,8 +9,8 @@ public class SlickGame extends StateBasedGame {
     /*
         Constants and Similar Wizardly Things
     */
-    public static final int     WIDTH           = 800;
-    public static final int     HEIGHT          = 600;
+    public static final int     WIDTH           = 1400;
+    public static final int     HEIGHT          = 900;
     public static final boolean FULLSCREEN      = false;
     public static final int     FPS             = 59; // -1 cuz it starts at 0
     public static final String  gameName        = "Loam - Pre-Alpha";
