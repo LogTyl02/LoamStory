@@ -26,7 +26,7 @@ public class Debug extends BasicGameState {
         */
         for (int i = 0; i <= SlickGame.WIDTH; i += 30) {
             for (int j = 500; j >= 100; j -= 30) {
-                tile.draw(i, j);
+                tile.draw(i, j, Color.darkGray);
             }
         }
     }

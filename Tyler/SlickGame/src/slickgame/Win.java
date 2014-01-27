@@ -14,8 +14,10 @@ public class Win extends BasicGameState {
     }
     
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-        g.drawString("Congrats, Dr. Balthazar White! A winrar is you!.", 50, 50);
-        
+        g.drawLine(SlickGame.WIDTH / 2, 0, SlickGame.WIDTH / 2, SlickGame.HEIGHT);
+        g.drawLine(0, SlickGame.HEIGHT / 2, SlickGame.WIDTH, SlickGame.HEIGHT / 2);
+        g.drawLine(0, 0, SlickGame.WIDTH, SlickGame.HEIGHT);
+        g.drawLine(SlickGame.WIDTH, 0, 0, SlickGame.HEIGHT);
     }
     
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
@@ -30,6 +32,10 @@ public class Win extends BasicGameState {
             sbg.enterState(2);
         } else if (input.isKeyDown(Input.KEY_3)) {
             sbg.enterState(3);
+        } else if (input.isKeyDown(Input.KEY_4)) {
+            sbg.enterState(4);
+        } else if (input.isKeyDown(Input.KEY_5)) {
+            sbg.enterState(5);
         } else if (input.isKeyDown(Input.KEY_8)) {
             sbg.enterState(8);
         } else if (input.isKeyDown(Input.KEY_9)) {

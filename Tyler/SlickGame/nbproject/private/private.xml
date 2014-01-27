@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Dogleaf/Documents/GitHub/logtyl02/prog/SlickGame/src/slickgame/Play.java</file>
-            <file>file:/C:/Users/Dogleaf/Documents/GitHub/logtyl02/prog/SlickGame/src/slickgame/SlickGame.java</file>
-            <file>file:/C:/Users/Dogleaf/Documents/GitHub/logtyl02/prog/SlickGame/src/slickgame/Menu.java</file>
+            <file>file:/home/dogleaf/Programming/csf/LoamStory/Tyler/SlickGame/src/slickgame/Intro.java</file>
+            <file>file:/home/dogleaf/Programming/csf/LoamStory/Tyler/SlickGame/src/slickgame/Debug.java</file>
+            <file>file:/home/dogleaf/Programming/csf/LoamStory/Tyler/SlickGame/src/slickgame/Play.java</file>
+            <file>file:/home/dogleaf/Programming/csf/LoamStory/Tyler/SlickGame/src/slickgame/Menu.java</file>
+            <file>file:/home/dogleaf/Programming/csf/LoamStory/Tyler/SlickGame/src/slickgame/SlickGame.java</file>
+            <file>file:/home/dogleaf/Programming/csf/LoamStory/Tyler/SlickGame/src/slickgame/Death.java</file>
+            <file>file:/home/dogleaf/Programming/csf/LoamStory/Tyler/SlickGame/src/slickgame/Win.java</file>
+            <file>file:/home/dogleaf/Programming/csf/LoamStory/Tyler/SlickGame/src/slickgame/CreateCharacter.java</file>
+            <file>file:/home/dogleaf/Programming/csf/LoamStory/Tyler/SlickGame/src/slickgame/LightTest.java</file>
         </group>
     </open-files>
 </project-private>

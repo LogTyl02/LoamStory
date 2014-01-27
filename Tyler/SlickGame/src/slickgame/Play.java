@@ -15,6 +15,8 @@ public class Play extends BasicGameState {
     float koroPosY = 500;
     float shiftX   = koroPosX + SlickGame.WIDTH / 2;  // Attempting to keep the sprite in the middle, and move the map underneath
     float shiftY   = koroPosY + SlickGame.HEIGHT / 2;
+  
+            
     
     
     
@@ -39,6 +41,7 @@ public class Play extends BasicGameState {
         g.drawString("This is the darkness.", 50, 50);
         koroAnim.draw(koroPosX, koroPosY, 300, 300);
         
+        
     }
     
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
@@ -53,11 +56,17 @@ public class Play extends BasicGameState {
             sbg.enterState(2);
         } else if (input.isKeyDown(Input.KEY_3)) {
             sbg.enterState(3);
+        } else if (input.isKeyDown(Input.KEY_4)) {
+            sbg.enterState(4);
+        } else if (input.isKeyDown(Input.KEY_5)) {
+            sbg.enterState(5);
         } else if (input.isKeyDown(Input.KEY_8)) {
             sbg.enterState(8);
         } else if (input.isKeyDown(Input.KEY_9)) {
             // Debug
             sbg.enterState(9);
+        
+    
         } else if (input.isKeyDown(Input.KEY_ESCAPE)) {
             quit = true;
         } else if (input.isKeyDown(Input.KEY_W)) {
