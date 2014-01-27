@@ -7,7 +7,7 @@ class Main
 		int[] newPos;
 		monstX = 7;
 		monstY = 4;
-		size = 25;
+		size = 40;
 		width = size;
 		height = size;
 
@@ -15,16 +15,16 @@ class Main
 		Maps pickMap = new Maps(grid, size);
 		Monst myMonster = new Monst(monstX, monstY, height,width, grid);
 		//pickMap.firstMapEver();
-		//pickMap.boxLevel();
+		pickMap.boxLevel();
 		//pickMap.rightBorder();
-		pickMap.topBorder();
+		//pickMap.topBorder();
 		//pickMap.leftBorder();
-		pickMap.bottomBorder();
+		//pickMap.bottomBorder();
 		pickMap.randomSpots();
 
 		while (true)
 		{
-			Thread.sleep(50);
+			Thread.sleep(75);
 			System.out.println("\033[2J");
 			newPos = myMonster.modeWonder();
 			grid.markCell(newPos[0], newPos[1]);
