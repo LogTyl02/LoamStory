@@ -1,6 +1,9 @@
 package slickgame;
 
 import java.io.File;
+import java.nio.FloatBuffer;
+import org.lwjgl.BufferUtils;
+import static org.lwjgl.opengl.GL11.*;
 import org.newdawn.slick.*;
 import org.newdawn.slick.particles.*;
 import org.newdawn.slick.particles.ConfigurableEmitter;
@@ -20,6 +23,16 @@ public class LightTest extends BasicGameState {
     }
     
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
+        
+        glShadeModel(GL_SMOOTH);
+        //glEnable(GL_DEPTH_TEST);
+        glEnable(GL_LIGHTING);
+        glEnable(GL_LIGHT0);
+        glLightModel(GL_LIGHT_MODEL_AMBIENT, asFloatBuffer(new float[]{0.05f, 0.05f, 0.05f, 1f}));
+        glLight(GL_LIGHT0, GL_DIFFUSE, asFloatBuffer(new float[]{1.5f, 1.5f, 1.5f, 1}));
+        glEnable(GL_COLOR_MATERIAL);
+        glColorMaterial(GL_FRONT, GL_DIFFUSE);
+        
         tile = new Image("res/art/tile/test.png");
         
         
@@ -76,6 +89,13 @@ public class LightTest extends BasicGameState {
     
     public int getID() {
         return 10;
+    }
+    
+    private static FloatBuffer asFloatBuffer(float[] values) {
+        FloatBuffer buffer = BufferUtils.createFloatBuffer(values.length);
+        buffer.put(values);
+        buffer.flip();
+        return buffer;
     }
     
 }
