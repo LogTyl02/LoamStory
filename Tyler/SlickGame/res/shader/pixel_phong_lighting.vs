@@ -7,7 +7,7 @@ varying vec4 varyingVertex;
 void main() {
     varyingColor = gl_Color;
     varyingNormal = gl_Normal;
-    varyingVertex = gl_vertex;
+    varyingVertex = gl_Vertex;
     gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
 
 }

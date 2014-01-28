@@ -3,6 +3,7 @@ package slickgame;
 import org.newdawn.slick.*;
 import org.newdawn.slick.loading.LoadingList;
 import org.newdawn.slick.state.*;
+import static org.lwjgl.opengl.GL20.*;
 
 public class SlickGame extends StateBasedGame {
     
@@ -70,5 +71,7 @@ public class SlickGame extends StateBasedGame {
         } 
         
     }
+    
+    
     
 }
