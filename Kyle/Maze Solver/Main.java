@@ -47,8 +47,8 @@ class Main
 		*/
 
 		//int[] win = {size-2, size-2};
-		x = 0;
-		y = 0;
+		x = 1;
+		y = 1;
 		st.push(x,y);
 		boolean running = true;
 		while (true)
