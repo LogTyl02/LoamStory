@@ -10,10 +10,17 @@ import org.newdawn.slick.particles.ConfigurableEmitter;
 import org.newdawn.slick.particles.ParticleIO;
 import org.newdawn.slick.particles.ParticleSystem;
 import org.newdawn.slick.state.*;
+import static org.lwjgl.opengl.GL20.*;
+import static org.lwjgl.opengl.GL20.glUseProgram;
 
 public class LightTest extends BasicGameState {
-   
-    Image tile;
+   public static final String VERTEX_SHADER_LOCATION = "res/shader/pixel_phong_lighting.vs";
+   public static final String FRAGMENT_SHADER_LOCATION = "res/shader/pixel_phong_lighting.fs";
+   private static int shaderProgram;
+    
+    
+    static Image tile;
+    Image s;
     Color tileColor = Color.darkGray;
     private ParticleSystem system;
     private ConfigurableEmitter emitter;
@@ -25,19 +32,13 @@ public class LightTest extends BasicGameState {
     }
     
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-        
-        glShadeModel(GL_SMOOTH);
-        //glEnable(GL_DEPTH_TEST);
-        glEnable(GL_LIGHTING);
-        glEnable(GL_LIGHT0);
-        glLightModel(GL_LIGHT_MODEL_AMBIENT, asFloatBuffer(new float[]{0.05f, 0.05f, 0.05f, 1f}));
-        glLight(GL_LIGHT0, GL_DIFFUSE, asFloatBuffer(new float[]{1.5f, 1.5f, 1.5f, 1}));
-        glEnable(GL_COLOR_MATERIAL);
-        glColorMaterial(GL_FRONT, GL_DIFFUSE);
-        glLight(GL_LIGHT0, GL_POSITION, asFloatBuffer(new float[]{ 300.0f, 300.0f, 1.0f, 1.0f}));
+        //setUpShaders();
+        //setUpLighting();
         
         
-        tile = new Image("res/art/tile/test.png");
+        
+        tile = new Image("res/art/tile/32grasstile.png");
+        s = new Image("res/art/sprite/tree.png");
         
         
         
@@ -58,19 +59,21 @@ public class LightTest extends BasicGameState {
     }
     
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-        tile.draw(50, 50, tileColor);
+        //glUseProgram(shaderProgram);
+        drawTiles();
         system.render();
         g.drawString(mx + " " + my, 150, 150);
-        
+            
     }
     
     public void update(GameContainer gc, StateBasedGame sbg, int delta) throws SlickException {
+        
         Input input = gc.getInput();
         tileColor = Color.darkGray;
         system.update(delta);
         mx = input.getMouseX();
         my = input.getMouseY();
-        glLight(GL_LIGHT0, GL_POSITION, asFloatBuffer(new float[]{ mx, my, 1.0f, 0.0f}));
+        glLight(GL_LIGHT0, GL_POSITION, asFloatBuffer(new float[]{ mx, my, 1.0f, 1.0f}));
         
         
         if (input.isKeyDown(Input.KEY_0)) {
@@ -107,4 +110,28 @@ public class LightTest extends BasicGameState {
         return buffer;
     }
     
+    private static void setUpShaders() {
+        shaderProgram = ShaderLoader.loadShaderPair(VERTEX_SHADER_LOCATION, FRAGMENT_SHADER_LOCATION);
+    }
+    
+    private static void setUpLighting() {
+        glShadeModel(GL_SMOOTH);
+        //glEnable(GL_DEPTH_TEST);
+        glEnable(GL_LIGHTING);
+        glEnable(GL_LIGHT0);
+        glLightModel(GL_LIGHT_MODEL_AMBIENT, asFloatBuffer(new float[]{0.05f, 0.05f, 0.05f, 1f}));
+        glLight(GL_LIGHT0, GL_POSITION, asFloatBuffer(new float[]{0f, 0f, 0f, 1.0f}));
+        glLight(GL_LIGHT0, GL_DIFFUSE, asFloatBuffer(new float[]{0.5f, 0.5f, 0.5f, 1.0f}));
+        glEnable(GL_COLOR_MATERIAL);
+        glColorMaterial(GL_FRONT, GL_DIFFUSE);
+        
+    }
+    
+    private static void drawTiles() {
+        for (int i = 0; i <= SlickGame.HEIGHT; i += 32) {
+            for (int j = 0; j <= SlickGame.WIDTH; j += 32) {
+                tile.draw(j, i);
+            }
+        }
+    }
 }
